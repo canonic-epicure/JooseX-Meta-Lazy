@@ -30,11 +30,13 @@
 			Test.Run.Harness.Browser.Multi.my.configure({
 				title : 'Lazy meta test suite',
 				
+				passThroughEx : true,
+				
 				preload : [
-					'/inc/Task/Joose/Stable.js',
-					'../lib/JooseX/Meta/Lazy.js'
+					'/inc/Task/Joose/core.js',
+					'JooseX.Meta.Lazy'
 				]
-			});
+			})    
 			
 			
 			Test.Run.Harness.Browser.Multi.my.start(
