@@ -33,14 +33,15 @@
 				passThroughEx : true,
 				
 				preload : [
-					'/inc/Task/Joose/core.js',
+					'/inc/Task/Joose/Core.js',
 					'JooseX.Meta.Lazy'
 				]
 			})    
 			
 			
 			Test.Run.Harness.Browser.Multi.my.start(
-				'010_lazy_meta.t.js'
+				'010_lazy_meta.t.js',
+				'020_constructing_on_extend.t.js'
 			)
 		</script>
 	</body>

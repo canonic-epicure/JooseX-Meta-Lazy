@@ -1,5 +1,5 @@
 StartTest(function(t) {
-	t.plan(10)
+	t.plan(7)
 	
     //==================================================================================================================================================================================
     t.diag("Lazy meta")    
@@ -45,52 +45,34 @@ StartTest(function(t) {
     t.ok(SuperClass, 'SuperClass class was created')    
 
     
+    
     Role('Resource', {
     	meta : TestMetaRole,
     	
     	have : {
-    		res : 'role:res'
+    		res1 : 'role:res'
     	},
     	
     	methods : {
-    		process : function () { return 'role:process' }
+    		process1 : function () { return 'role:process' }
     	}
     })    
-    t.ok(Resource, "Role 'Resource' was created")    
+    t.ok(Resource, "Role 'Resource' was created")
 
-    
-    //will inhetit the same meta
-    Class('SubClass', {
-    	isa : SuperClass,
-    	
-    	does : [ Resource ]
-    })    
-    t.ok(SubClass, 'SubClass class was created')    
-
-    
-
-    //==================================================================================================================================================================================
-    t.diag("Under construction state")    
-    
-    t.throws_ok(function() {
-        SuperClass.meta.hasAttribute('res')    
-    }, "", "'SuperClass even have no stem yet")
-
-    
-    t.throws_ok(function() {
-        Resource.meta.hasAttribute('res')    
-    }, "", "'Resource even have no stem yet")
-    
     
     //==================================================================================================================================================================================
-    t.diag("Lazy construction")    
+    t.diag("Constructing on extend")    
     
-    debugger
-    var subclass = new SubClass()    
+    SuperClass.meta.extend({
+        does : [ Resource ]
+    })
+    
     
     t.ok(SuperClass.meta.hasAttribute('res') && SuperClass.meta.hasMethod('process'), "SuperClass was correctly constructed")    
-    t.ok(Resource.meta.hasAttribute('res') && Resource.meta.hasMethod('process'), "Resource was correctly constructed")    
+    t.ok(Resource.meta.hasAttribute('res1') && Resource.meta.hasMethod('process1'), "Resource was correctly constructed")    
     
-    t.ok(SubClass.meta.hasAttribute('res') && subclass.res == 'role:res', "SubClass was correctly constructed #1")    
-    t.ok(SubClass.meta.hasMethod('process') && subclass.process() == 'role:process', "SubClass was correctly constructed #2")    
+    var superclass = new SuperClass()
+    
+    t.ok(SuperClass.meta.hasAttribute('res1') && superclass.res1 == 'role:res', "SuperClass was correctly extended #1")    
+    t.ok(SuperClass.meta.hasMethod('process1') && superclass.process1() == 'role:process', "SuperClass was correctly constructed #2")    
 })    
