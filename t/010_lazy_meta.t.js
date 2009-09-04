@@ -74,12 +74,12 @@ StartTest(function(t) {
     
     t.throws_ok(function() {
         SuperClass.meta.hasAttribute('res')    
-    }, "this.stem is null", "'SuperClass even have no stem yet")
+    }, "", "'SuperClass even have no stem yet")
 
     
     t.throws_ok(function() {
         Resource.meta.hasAttribute('res')    
-    }, "this.stem is null", "'Resource even have no stem yet")
+    }, "", "'Resource even have no stem yet")
     
     
     //==================================================================================================================================================================================
