@@ -1,5 +1,5 @@
 StartTest(function(t) {
-	t.plan(10)
+	t.plan(13)
 	
     //==================================================================================================================================================================================
     t.diag("Lazy meta")    
@@ -80,6 +80,11 @@ StartTest(function(t) {
     t.throws_ok(function() {
         Resource.meta.hasAttribute('res')    
     }, "", "'Resource even have no stem yet")
+    
+    
+    t.ok(Resource.meta.pending, "'Resource' is pending construction")
+    t.ok(SuperClass.meta.pending, "'SuperClass' is pending construction")
+    t.ok(SubClass.meta.pending, "'SubClass' is pending construction")
     
     
     //==================================================================================================================================================================================

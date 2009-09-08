@@ -8,31 +8,9 @@ StartTest(function(t) {
     
 
     //==================================================================================================================================================================================
-    t.diag("Defining lazy metaclasses")    
-    
-    Class('TestMetaClass', {
-    	meta : Joose.Meta.Class,
-    	
-    	isa : Joose.Meta.Class,
-    	
-    	does : [ JooseX.Meta.Lazy ]
-    })    
-    
-
-    Class('TestMetaRole', {
-    	meta : Joose.Meta.Class,
-    	
-    	isa : Joose.Meta.Role,
-    	
-    	does : [ JooseX.Meta.Lazy ]
-    })    
-    
-
-    //==================================================================================================================================================================================
     t.diag("Creation")    
     
-    Class('SuperClass', {
-    	meta : TestMetaClass,
+    LazyClass('SuperClass', {
     	
     	have : {
     		res : 'sup:res'
@@ -46,8 +24,7 @@ StartTest(function(t) {
 
     
     
-    Role('Resource', {
-    	meta : TestMetaRole,
+    LazyRole('Resource', {
     	
     	have : {
     		res1 : 'role:res'

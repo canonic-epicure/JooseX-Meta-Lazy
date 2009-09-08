@@ -1,6 +1,6 @@
 StartTest(function(t) {
     
-	t.plan(11)
+	t.plan(14)
 	
     //==================================================================================================================================================================================
     t.diag("Sanity")    
@@ -59,6 +59,10 @@ StartTest(function(t) {
         Resource.meta.hasAttribute('res')    
     }, "", "'Resource even have no stem yet")
     
+    
+    t.ok(Resource.meta.pending, "'Resource' is pending construction")
+    t.ok(SuperClass.meta.pending, "'SuperClass' is pending construction")
+    t.ok(SubClass.meta.pending, "'SubClass' is pending construction")
     
     //==================================================================================================================================================================================
     t.diag("Lazy construction")    
