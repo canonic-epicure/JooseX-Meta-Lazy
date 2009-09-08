@@ -1,38 +1,18 @@
 StartTest(function(t) {
-	t.plan(10)
+    
+	t.plan(11)
 	
     //==================================================================================================================================================================================
-    t.diag("Lazy meta")    
+    t.diag("Sanity")    
     
-    t.ok(JooseX.Meta.Lazy, "JooseX.Meta.Lazy is here")    
-    
-
-    //==================================================================================================================================================================================
-    t.diag("Defining lazy metaclasses")    
-    
-    Class('TestMetaClass', {
-    	meta : Joose.Meta.Class,
-    	
-    	isa : Joose.Meta.Class,
-    	
-    	does : [ JooseX.Meta.Lazy ]
-    })    
-    
-
-    Class('TestMetaRole', {
-    	meta : Joose.Meta.Class,
-    	
-    	isa : Joose.Meta.Role,
-    	
-    	does : [ JooseX.Meta.Lazy ]
-    })    
+    t.ok(typeof LazyClass == 'function', "LazyClass helper is here")    
+    t.ok(typeof LazyRole == 'function', "LazyRole helper is here")
     
 
     //==================================================================================================================================================================================
-    t.diag("Creation")    
+    t.diag("Creation of lazy class with helper")    
     
-    Class('SuperClass', {
-    	meta : TestMetaClass,
+    LazyClass('SuperClass', {
     	
     	have : {
     		res : 'sup:res'
@@ -45,8 +25,7 @@ StartTest(function(t) {
     t.ok(SuperClass, 'SuperClass class was created')    
 
     
-    Role('Resource', {
-    	meta : TestMetaRole,
+    LazyRole('Resource', {
     	
     	have : {
     		res : 'role:res'
@@ -58,8 +37,8 @@ StartTest(function(t) {
     })    
     t.ok(Resource, "Role 'Resource' was created")    
 
-
-    //will inherit the same meta
+    
+    //will inhetit the same meta
     Class('SubClass', {
     	isa : SuperClass,
     	
@@ -67,7 +46,6 @@ StartTest(function(t) {
     })    
     t.ok(SubClass, 'SubClass class was created')    
 
-    
 
     //==================================================================================================================================================================================
     t.diag("Under construction state")    
@@ -83,7 +61,7 @@ StartTest(function(t) {
     
     
     //==================================================================================================================================================================================
-    t.diag("Lazy construction")
+    t.diag("Lazy construction")    
     
     var subclass = new SubClass()    
     
