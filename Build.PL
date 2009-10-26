@@ -1,13 +1,10 @@
-use Module::Build::JSAN::Installable;
+use inc::Module::JSAN::DSL;
 
-my $build = Module::Build::JSAN::Installable->new(
-	module_name    => 'JooseX.Meta.Lazy',
-	create_makefile_pl => 'passthrough',
-	dist_version   => 0.01,
-	dist_author   => 'SamuraiJack',
-	dist_abstract  => "Role to make metaclass 'lazy'",
-	license        => 'perl',
-);
+name            JooseX.Meta.Lazy
+version         0.01
+author          'Nickolay (SamuraiJack) Platonov <root@symbie.org>'
+abstract        "Trait to make metaclass lazy"
 
-$build->create_build_script;
+license         perl
 
+requires        Joose   3.001
