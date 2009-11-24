@@ -1,38 +1,21 @@
 StartTest(function(t) {
-	t.plan(13)
+	
+    t.plan(16)
 	
     //==================================================================================================================================================================================
-    t.diag("Lazy meta")    
+    t.diag("Sanity")    
     
     t.ok(JooseX.Meta.Lazy, "JooseX.Meta.Lazy is here")    
-    
+    t.ok(JooseX.Meta.Lazy.Class, "JooseX.Meta.Lazy.Class is here")
+    t.ok(JooseX.Meta.Lazy.Role, "JooseX.Meta.Lazy.Role is here")
+    t.ok(LazyClass && LazyRole, "LazyClass && LazyRole helpers were created")
 
-    //==================================================================================================================================================================================
-    t.diag("Defining lazy metaclasses")    
-    
-    Class('TestMetaClass', {
-    	meta : Joose.Meta.Class,
-    	
-    	isa : Joose.Meta.Class,
-    	
-    	does : [ JooseX.Meta.Lazy ]
-    })    
-    
-
-    Class('TestMetaRole', {
-    	meta : Joose.Meta.Class,
-    	
-    	isa : Joose.Meta.Role,
-    	
-    	does : [ JooseX.Meta.Lazy ]
-    })    
-    
 
     //==================================================================================================================================================================================
     t.diag("Creation")    
     
     Class('SuperClass', {
-    	meta : TestMetaClass,
+    	meta : JooseX.Meta.Lazy.Class,
     	
     	have : {
     		res : 'sup:res'
@@ -46,7 +29,7 @@ StartTest(function(t) {
 
     
     Role('Resource', {
-    	meta : TestMetaRole,
+    	meta : JooseX.Meta.Lazy.Role,
     	
     	have : {
     		res : 'role:res'

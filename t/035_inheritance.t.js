@@ -1,6 +1,6 @@
 StartTest(function(t) {
     
-	t.plan(8)
+	t.plan(10)
 	
     //==================================================================================================================================================================================
     t.diag("Sanity")    
@@ -22,8 +22,11 @@ StartTest(function(t) {
     		process : function () { return 'sup:process' }
     	}
     })    
-    t.ok(SuperClass, 'SuperClass class was created')    
+    t.ok(SuperClass, 'SuperClass class was created')
+    
+    t.ok(SuperClass.meta.pending, 'SuperClass class is pending construction')
 
+    
     
     Class('Subclass', {
         
@@ -34,8 +37,11 @@ StartTest(function(t) {
     t.ok(Subclass, 'Subclass class was created')    
     
     
-    t.ok(Subclass.meta.hasAttribute('res') && Subclass.meta.hasMethod('process'), "Subclass was constructed correctly #1")
+    t.ok(!SuperClass.meta.pending, 'SuperClass class was constructed to create a not lazy subclass')
     
+    
+    
+    t.ok(Subclass.meta.hasAttribute('res') && Subclass.meta.hasMethod('process'), "Subclass was constructed correctly #1")
     
     
     var subclass = new Subclass()
