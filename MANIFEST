@@ -11,7 +11,7 @@ INSTALL
 lib/JooseX/Meta/Lazy.js
 MANIFEST			This list of files
 META.json
-README
+README.md
 t/010_lazy_meta.t.js
 t/020_helpers.t.js
 t/030_constructing_on_extend.t.js
