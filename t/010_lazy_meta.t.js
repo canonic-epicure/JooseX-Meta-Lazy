@@ -1,6 +1,6 @@
 StartTest(function(t) {
 	
-    t.plan(16)
+    t.plan(19)
 	
     //==================================================================================================================================================================================
     t.diag("Sanity")    
@@ -15,7 +15,7 @@ StartTest(function(t) {
     t.diag("Creation")    
     
     Class('SuperClass', {
-    	meta : JooseX.Meta.Lazy.Class,
+    	trait : JooseX.Meta.Lazy,
     	
     	have : {
     		res : 'sup:res'
@@ -29,7 +29,7 @@ StartTest(function(t) {
 
     
     Role('Resource', {
-    	meta : JooseX.Meta.Lazy.Role,
+    	trait : JooseX.Meta.Lazy,
     	
     	have : {
     		res : 'role:res'
@@ -75,9 +75,15 @@ StartTest(function(t) {
     
     var subclass = new SubClass()    
     
+    t.ok(!Resource.meta.pending, "'Resource' was constructed")
+    t.ok(!SuperClass.meta.pending, "'SuperClass' was constructed")
+    t.ok(!SubClass.meta.pending, "'SubClass' was constructed")
+    
+    
     t.ok(SuperClass.meta.hasAttribute('res') && SuperClass.meta.hasMethod('process'), "SuperClass was correctly constructed")    
     t.ok(Resource.meta.hasAttribute('res') && Resource.meta.hasMethod('process'), "Resource was correctly constructed")    
     
     t.ok(SubClass.meta.hasAttribute('res') && subclass.res == 'role:res', "SubClass was correctly constructed #1")    
-    t.ok(SubClass.meta.hasMethod('process') && subclass.process() == 'role:process', "SubClass was correctly constructed #2")    
+    t.ok(SubClass.meta.hasMethod('process') && subclass.process() == 'role:process', "SubClass was correctly constructed #2")
+    
 })    

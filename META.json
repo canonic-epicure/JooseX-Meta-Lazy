@@ -23,5 +23,5 @@
    "requires" : {
       "Joose" : "3.005"
    },
-   "abstract" : "Trait to make metaclass lazy"
+   "abstract" : "A trait to make your metaclasses lazy"
 }

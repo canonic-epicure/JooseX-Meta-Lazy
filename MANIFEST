@@ -1,7 +1,6 @@
 .gitignore
 doc/html/JooseX/Meta/Lazy.html
-doc/pod/JooseX/Meta/Lazy.pod
-doc/text/JooseX/Meta/Lazy.txt
+doc/mmd/JooseX/Meta/Lazy.txt
 inc/Module/Build/Functions.pm
 inc/Module/Build/Functions/DSL.pm
 inc/Module/Build/JSAN.pm

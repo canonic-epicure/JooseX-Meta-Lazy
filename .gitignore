@@ -1,7 +1,8 @@
 _build
 Build
 blib
-doc
+/doc/*
 .project
 .externalToolBuilders
 MANIFEST.bak
+/inc/*
