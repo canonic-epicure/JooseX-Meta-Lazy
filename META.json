@@ -1,0 +1,27 @@
+{
+   "resources" : {
+      "license" : "http://dev.perl.org/licenses/"
+   },
+   "generated_by" : "Module::Build version 0.3601",
+   "meta-spec" : {
+      "version" : "1.4",
+      "url" : "http://module-build.sourceforge.net/META-spec-v1.4.html"
+   },
+   "version" : "0.01",
+   "name" : "JooseX.Meta.Lazy",
+   "author" : [
+      "Nickolay (SamuraiJack) Platonov <root@symbie.org>"
+   ],
+   "license" : "perl",
+   "static_dir" : "static",
+   "provides" : {
+      "JooseX.Meta.Lazy" : {
+         "version" : null,
+         "file" : "lib/JooseX/Meta/Lazy.js"
+      }
+   },
+   "requires" : {
+      "Joose" : "3.005"
+   },
+   "abstract" : "Trait to make metaclass lazy"
+}

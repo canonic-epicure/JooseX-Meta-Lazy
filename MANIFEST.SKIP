@@ -51,3 +51,4 @@
 JooseX.Meta.Lazy-0.01
 \.project$
 ^\.git\b
+^MYMETA.yml$
