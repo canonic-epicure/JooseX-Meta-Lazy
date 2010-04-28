@@ -1,9 +1,9 @@
 use inc::Module::JSAN::DSL;
 
 name            JooseX.Meta.Lazy
-version         0.01
+version         0.02
 
-author          'Nickolay (SamuraiJack) Platonov <root@symbie.org>'
+author          'Nickolay (SamuraiJack) Platonov <nplatonov@cpan.org>'
 
 abstract        "A trait to make your metaclasses lazy"
 

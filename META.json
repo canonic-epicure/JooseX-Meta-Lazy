@@ -7,10 +7,10 @@
       "version" : "1.4",
       "url" : "http://module-build.sourceforge.net/META-spec-v1.4.html"
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "name" : "JooseX.Meta.Lazy",
    "author" : [
-      "Nickolay (SamuraiJack) Platonov <root@symbie.org>"
+      "Nickolay (SamuraiJack) Platonov <nplatonov@cpan.org>"
    ],
    "license" : "perl",
    "static_dir" : "static",

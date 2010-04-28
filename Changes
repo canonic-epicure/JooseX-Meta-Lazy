@@ -1,0 +1,14 @@
+0.02 
+
+    [ENHANCEMENTS]
+    
+    -none-
+    
+    
+    [API CHANGES]
+
+    -none-
+    
+    [BUG FIXES]
+    
+    - fixed bug, preventing this trait to be applied twice (can be the case, when lazy class consumes the lazy role)
