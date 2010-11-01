@@ -1,9 +1,4 @@
-_build
-Build
-blib
-/doc/*
+.build
 .project
 .externalToolBuilders
-MANIFEST.bak
-/inc/*
-JooseX.Meta.Lazy-*.tar.gz
+/JooseX-Meta-Lazy-*
