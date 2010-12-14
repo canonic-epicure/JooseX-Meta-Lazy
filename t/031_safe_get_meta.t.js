@@ -49,7 +49,7 @@ StartTest(function(t) {
     //==================================================================================================================================================================================
     t.diag("Constructing on 'getMeta()")    
     
-    var meta = SuperClass.getMeta()
+    var meta = SuperClass.$meta()
 
     
     t.ok(!Resource.meta.pending, "'Resource' is not pending construction")

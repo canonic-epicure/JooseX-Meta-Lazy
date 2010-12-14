@@ -2,6 +2,9 @@ Release history for JooseX.Meta.Lazy
 
 {{$NEXT}}
 
+    - added "lazy-safe" accessors for `meta` and `my`: $meta() and $my()
+    - docs update
+
 0.3.0     2010-11-01 13:17
 
     - first release on `npm` platform
