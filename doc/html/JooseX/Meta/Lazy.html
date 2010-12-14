@@ -58,12 +58,32 @@
     })
 </code></pre>
 
+<h1 id="installation">INSTALLATION</h1>
+
+<p>From <code>npm</code>:</p>
+
+<pre><code>&gt; [sudo] npm install joosex-meta-lazy         
+</code></pre>
+
+<h1 id="setup">SETUP</h1>
+
+<p>In NodeJS (it will export <code>JooseX.Meta.Lazy</code> to global scope):</p>
+
+<pre><code>require('joosex-meta-lazy')
+</code></pre>
+
+<p>In browsers (assuming you've completed the 3.1 item from this <a href="http://joose.github.com/Joose/doc/html/Joose/Manual/Installation.html">document</a>):</p>
+
+<pre><code>&lt;script type="text/javascript" src="/jsan/Task/Joose/Core.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/jsan/JooseX/Meta/Lazy.js"&gt;&lt;/script&gt;
+</code></pre>
+
 <h1 id="description">DESCRIPTION</h1>
 
 <p><code>JooseX.Meta.Lazy</code> is a meta-role, making your class (or role) lazy. "Lazy" here means, that the creation of the
 metaclass instance will be deferred until the first instantiation of class (or first consumption of role).</p>
 
-<p>If you have a <em>big</em> class hierarchy (like the <a href="http://openjsan.org/go?l=JooseX.Bridge.Ext">bridged ExtJS hierarchy</a> for example or your own framework), 
+<p>If you have a <em>big</em> class hierarchy (like the <a href="http://github.com/SamuraiJack/joosex-bridge-ext">bridged ExtJS hierarchy</a> for example or your own framework), 
 this module can reduce the initialization time.</p>
 
 <p>You can apply it as a trait (the 1st example in the synopsys), or you can use the new declaration helpers: <code>LazyClass</code> or <code>LazyRole</code></p>
@@ -95,7 +115,9 @@ also lazy. If you'd like to avoid this, see the next section for details.  </p>
 
 <p>This extension is supported via github issues tracker: <a href="http://github.com/SamuraiJack/JooseX-Meta-Lazy/issues">http://github.com/SamuraiJack/JooseX-Meta-Lazy/issues</a></p>
 
-<p>For general Joose questions you can also visit #joose on irc.freenode.org or the forum at: <a href="http://joose.it/forum">http://joose.it/forum</a></p>
+<p>You can also ask questions at IRC channel : <a href="http://webchat.freenode.net/?randomnick=1&amp;channels=joose&amp;prompt=1">#joose</a></p>
+
+<p>Or the mailing list: <a href="http://groups.google.com/group/joose-js">http://groups.google.com/group/joose-js</a></p>
 
 <h1 id="seealso">SEE ALSO</h1>
 
@@ -115,7 +137,7 @@ also lazy. If you'd like to avoid this, see the next section for details.  </p>
 
 <h1 id="authors">AUTHORS</h1>
 
-<p>Nickolay Platonov <a href="&#109;a&#x69;&#108;&#116;&#111;:&#110;&#112;&#108;&#97;&#116;&#x6F;&#110;&#x6F;&#x76;&#64;&#99;&#x70;&#x61;n&#46;&#111;&#114;&#x67;">&#110;&#112;&#108;&#97;&#116;&#x6F;&#110;&#x6F;&#x76;&#64;&#99;&#x70;&#x61;n&#46;&#111;&#114;&#x67;</a></p>
+<p>Nickolay Platonov <a href="&#109;&#x61;&#x69;&#108;&#116;&#111;:&#110;&#x70;&#x6C;&#x61;&#x74;&#x6F;&#x6E;&#111;&#118;&#64;c&#112;&#97;&#x6E;&#x2E;&#x6F;&#114;&#103;">&#110;&#x70;&#x6C;&#x61;&#x74;&#x6F;&#x6E;&#111;&#118;&#64;c&#112;&#97;&#x6E;&#x2E;&#x6F;&#114;&#103;</a></p>
 
 <h1 id="copyrightandlicense">COPYRIGHT AND LICENSE</h1>
 
