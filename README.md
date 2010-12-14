@@ -54,6 +54,27 @@ SYNOPSIS
         LazyClass("Some.Lazy.Class", {
             ...
         })
+        
+
+INSTALLATION
+============
+
+From `npm`:
+    
+    > [sudo] npm install joosex-meta-lazy         
+
+
+SETUP
+=====
+
+In NodeJS (it will export `JooseX.Meta.Lazy` to global scope):
+
+    require('joosex-meta-lazy')
+    
+In browsers (assuming you've completed the 3.1 item from this [document](http://joose.github.com/Joose/doc/html/Joose/Manual/Installation.html)):
+
+    <script type="text/javascript" src="/jsan/Task/Joose/Core.js"></script>
+    <script type="text/javascript" src="/jsan/JooseX/Meta/Lazy.js"></script>
 
 
 DESCRIPTION
@@ -62,7 +83,7 @@ DESCRIPTION
 `JooseX.Meta.Lazy` is a meta-role, making your class (or role) lazy. "Lazy" here means, that the creation of the
 metaclass instance will be deferred until the first instantiation of class (or first consumption of role).
 
-If you have a *big* class hierarchy (like the [bridged ExtJS hierarchy](http://openjsan.org/go?l=JooseX.Bridge.Ext) for example or your own framework), 
+If you have a *big* class hierarchy (like the [bridged ExtJS hierarchy](http://github.com/SamuraiJack/joosex-bridge-ext) for example or your own framework), 
 this module can reduce the initialization time.
 
 You can apply it as a trait (the 1st example in the synopsys), or you can use the new declaration helpers: `LazyClass` or `LazyRole`
@@ -100,7 +121,9 @@ GETTING HELP
 
 This extension is supported via github issues tracker: <http://github.com/SamuraiJack/JooseX-Meta-Lazy/issues>
 
-For general Joose questions you can also visit #joose on irc.freenode.org or the forum at: <http://joose.it/forum>
+You can also ask questions at IRC channel : [#joose](http://webchat.freenode.net/?randomnick=1&channels=joose&prompt=1)
+ 
+Or the mailing list: <http://groups.google.com/group/joose-js>
  
 
 
