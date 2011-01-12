@@ -2,6 +2,8 @@ Release history for JooseX.Meta.Lazy
 
 {{$NEXT}}
 
+0.3.2     2011-01-12 18:49
+
     - re-release just to pick up the new markdown css styles, no functional changes
 
 0.3.1     2010-12-14 20:39
